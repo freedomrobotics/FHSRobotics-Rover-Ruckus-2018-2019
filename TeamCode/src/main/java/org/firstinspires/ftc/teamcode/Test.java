@@ -1,24 +1,22 @@
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
+package org.firstinspires.ftc.teamcode;
+
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
-import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.util.ElapsedTime;
-import com.qualcomm.robotcore.util.Range;
 
-
-
-@TeleOp(name="Teleop", group="FHSROBOTICS")
-@Disabled
-public class Teleop extends OpMode {
+@Autonomous(name="Test", group="FHSROBOTICS")
+// @Disabled //
+public class Test extends OpMode {
 
     // Declare all motors, servos, and other hardware below //
 
+    DcMotor leftMotor;
 
     // Code to run ONCE when the driver hits INIT //
     @Override
     public void init() {
 
-
+        leftMotor = hardwareMap.dcMotor.get("leftMotor");
 
     }
 
@@ -34,7 +32,7 @@ public class Teleop extends OpMode {
     @Override
     public void start() {
 
-
+        leftMotor.setPower(1.0);
 
     }
 
@@ -50,7 +48,7 @@ public class Teleop extends OpMode {
     @Override
     public void stop() {
 
-
+        leftMotor.setPower(0);
 
     }
 
