@@ -1,12 +1,13 @@
 package org.firstinspires.ftc.teamcode;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
-import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
-@Autonomous(name="Test", group="FHSROBOTICS")
-// @Disabled //
-public class Test extends OpMode {
+@TeleOp(name="Teleop", group="FHSROBOTICS")
+@Disabled
+public class Teleop extends OpMode {
 
     // Declare all motors, servos, and other hardware below //
 
@@ -18,6 +19,7 @@ public class Test extends OpMode {
     public void init() {
 
         leftMotor = hardwareMap.dcMotor.get("leftMotor");
+        rightMotor = hardwareMap.dcMotor.get("rightMotor");
 
     }
 
@@ -42,6 +44,7 @@ public class Test extends OpMode {
     public void loop() {
 
         leftMotor.setPower(gamepad1.left_stick_x);
+        rightMotor.setPower(gamepad1.right_stick_x);
 
     }
 
@@ -50,6 +53,7 @@ public class Test extends OpMode {
     public void stop() {
 
         leftMotor.setPower(0);
+        rightMotor.setPower(0);
 
     }
 
