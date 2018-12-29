@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 @TeleOp(name="Teleop", group="FHSROBOTICS")
-@Disabled
+// @Disabled //
 public class Teleop extends OpMode {
 
     // Declare all motors, servos, and other hardware below //
